@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      input {
+        border: 3px solid rgb(190, 190, 190);
+      }
+
+      .row {
+        padding: 4px 6px;
+      }
+
+      .error {
+        border: 3px solid rgb(255, 154, 154);
+      }
+      .NotError {
+        border: 0px solid rgb(255, 154, 154);
+      }
+
+      .check {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form id="myform" onsubmit="return check(this)">
+      <div class="row"><input type="text" name="param1" /></div>
+      <div class="row"><input type="text" name="param2" /></div>
+      <div class="row"><input type="text" name="param3" /></div>
+      <div class="row"><input type="text" name="param4" /></div>
+      <div class="row"><input type="text" name="param5" /></div>
+      <div class="row"><input type="text" name="param6" /></div>
+      <div class="row"><input type="text" name="param7" /></div>
+
+      <div class="row">
+        <textarea name="param8" id="" cols="20" rows="5"></textarea>
+      </div>
+      <div class="row">
+        <input type="checkbox" name="param9" /> Согласны на всё
+      </div>
+
+      <div class="row"><input type="submit" /></div>
+    </form>
+    <script>
+      /*
+         Реализовать функцию check() так, чтобы форма отправляла данные, в случае заполненности всех элементов формы.
+         Если, какое-то из однострочных полей или textarea будет заполнено, то нарисовать ему красный бордюр и вывести alert с текстом "Заполните все поля"
+         */
+
+      function check(elem) {
+        let value = elem.querySelectorAll('input[type="text"]');
+        let text = elem.querySelector("textarea");
+        let checkbox = document.querySelector('input[type="checkbox"]');
+        let len = value.length;
+        for (i = 0; i < len; i++) {
+          if (value[i].value === "") {
+            value[i].className = "error";
+            text.value.className = "error";
+            alert("Не все поля заполнены");
+            return false;
+          }
+          if (text.value === "") {
+            text.className = "error";
+            alert("Не все поля заполнены");
+            return false;
+          }
+          value[i].className = "input";
+          text.className = "input";
+
+          if (checkbox.checked == false) {
+            checkbox.className = 'red';
+            alert("Вы должны поставить галочку!!");
+            return false;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
