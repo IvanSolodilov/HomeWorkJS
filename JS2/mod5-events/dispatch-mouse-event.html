@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <button>Кнопка 1</button>
+    </div>
+    <pre id="result"></pre>
+
+    <h1> тут закончил 44:32 </h1>
+
+    
+
+    <ul>
+      <li>Lorem ipsum dolor sit amet.</li>
+      <li>Commodi quod recusandae maxime quidem?</li>
+      <li>Esse sunt ducimus doloribus ea?</li>
+      <li>Labore molestiae veritatis consequatur totam.</li>
+      <li>Iusto ipsa molestiae soluta perferendis!</li>
+    </ul>
+
+    <script>
+      let button = document.querySelector("button");
+      button.addEventListener("click", function (ev) {
+        alert(1);
+      });
+
+      let li = document.querySelector('li');
+      li.addEventListener('click', function (ev){
+        li.style.color = 'red'
+      })
+      let li2 = document.querySelector('li:nth-child(3)'); 
+      li2.addEventListener('mouseover', function (ev){
+        li2.style.color = 'blue'
+      })
+
+
+      //Запустить скрипт в браузере. Открыть консоль разработчика, в консоли написать код поиска кнопки.
+      //и сгенерировать нажатие на кнопки.
+
+      /*
+let button2 = document.querySelector("button");
+button2.dispatchEvent (new MouseEvent('click'))
+      */
+    </script>
+  </body>
+</html>

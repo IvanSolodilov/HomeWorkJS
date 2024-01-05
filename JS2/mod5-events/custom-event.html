@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <button>Кнопка 1</button>
+    </div>
+    <pre id="result"></pre>
+
+    <script>
+      let button = document.querySelector("button");
+      button.addEventListener("click", function (ev) {
+        button.dispatchEvent(
+          new CustomEvent("foo", {
+            detail: {
+              x: 10,
+              str: "Hello",
+            },
+          })
+        );
+      });
+
+      button.addEventListener("foo", function (ev) {
+        result.innerHTML += JSON.stringify(ev.detail, null, " ");
+      });
+    </script>
+  </body>
+</html>

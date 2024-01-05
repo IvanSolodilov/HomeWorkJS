@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    .wrapper {
+      background-color: bisque;
+      padding: 20px;
+    }
+
+    .wrapper button {
+      display: inline-block;
+      margin: 5px 10px;
+    }
+  </style>
+  <body>
+    <div class="wrapper">
+      <button>Кнопка 1</button>
+      <button>Кнопка 2</button>
+    </div>
+
+    <script>
+
+        let wrapper = document.querySelector('.wrapper');
+        wrapper.addEventListener('click', function(ev) {
+            if(ev.target instanceof HTMLButtonElement)
+            alert(this)
+        })
+
+    </script>
+  </body>
+</html>

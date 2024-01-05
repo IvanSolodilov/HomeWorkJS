@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #result {
+        width: 100px;
+        height: 50px;
+        color: rgb(10, 136, 1);
+        /*position: fixed; */
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        font-size: 1rem;
+      }
+      #result2 {
+        width: 100px;
+        height: 80px;
+        /*position: fixed; */
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        font-size: 1rem;
+      }
+      #result3 {
+        width: 100px;
+        height: 110px;
+        /*position: fixed; */
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        font-size: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="result">16:47:10</div>
+    <div id="result2">16:47:10</div>
+    <div id="result3">16:47:10</div>
+    <script>
+      /*Напишите скрипт, который будет выводить текущее время в элементе 
+    с идентификатором result. Нужно использовать setInterval или setTimeout*/
+
+      const clock = () => {
+        result.innerHTML = `Мое решение: ${new Date().toLocaleTimeString()}`;
+      };
+
+      let t1 = setInterval(clock, 1000);
+
+      // ИЛИ
+
+      function my() {
+        const dt = `Решение из курса: ${new Date().toLocaleTimeString()}`;
+        result2.innerHTML = dt;
+        setTimeout(my, 1000);
+      }
+      my();
+
+      // Если нужно завершать по таймеру
+
+      function timer(minutes) {
+        // время завершения таймера
+        let stopTimer = new Date(new Date().getTime() + minutes * 60 * 1000); // minutes * секунды * миллисекунды
+
+        function my() {
+          const currentdt = new Date();
+          const time = currentdt.toLocaleTimeString();
+          result3.innerHTML =
+            `Отключается по таймеру(${minutes} минута): ` + time;
+          if (currentdt <= stopTimer) {
+            setTimeout(my, 1000);
+          }
+        }
+        my();
+      }
+      timer(1); // передаем значение 1 минуту
+    </script>
+  </body>
+</html>

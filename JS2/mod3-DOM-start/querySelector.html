@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Hello, world!</h1>
+    <section>
+      <h2>First heading</h2>
+      <p>Lorem, ipsum dolor.</p>
+      <p>Eum, dolorem vel.</p>
+    </section>
+    <section>
+      <h2>Second heading</h2>
+      <p>Lorem, ipsum dolor.</p>
+      <p>Eum, <strong>dolorem</strong> vel.</p>
+    </section>
+  </div>
+  <script>
+    const data = [
+      {
+        id: 7,
+        email: "michael.lawson@reqres.in",
+        first_name: "Michael",
+        last_name: "Lawson",
+        avatar: "https://reqres.in/img/faces/7-image.jpg",
+      },
+      {
+        id: 8,
+        email: "lindsay.ferguson@reqres.in",
+        first_name: "Lindsay",
+        last_name: "Ferguson",
+        avatar: "https://reqres.in/img/faces/8-image.jpg",
+      },
+      {
+        id: 9,
+        email: "tobias.funke@reqres.in",
+        first_name: "Tobias",
+        last_name: "Funke",
+        avatar: "https://reqres.in/img/faces/9-image.jpg",
+      },
+      {
+        id: 10,
+        email: "byron.fields@reqres.in",
+        first_name: "Byron",
+        last_name: "Fields",
+        avatar: "https://reqres.in/img/faces/10-image.jpg",
+      },
+      {
+        id: 11,
+        email: "george.edwards@reqres.in",
+        first_name: "George",
+        last_name: "Edwards",
+        avatar: "https://reqres.in/img/faces/11-image.jpg",
+      },
+      {
+        id: 12,
+        email: "rachel.howell@reqres.in",
+        first_name: "Rachel",
+        last_name: "Howell",
+        avatar: "https://reqres.in/img/faces/12-image.jpg",
+      },
+    ];
+
+    const users = data.map(function (data2) {
+      return (data2 = [
+        `<div class="card card-user">
+<img src="${data2.avatar}" alt="${data2.first_name} ${data2.last_name}">
+<h2>${data2.first_name} ${data2.last_name}</h2>
+<p>Email: <a href="mailto:${data2.email}">${data2.email}</a></p>
+<p><a href="/user/${data2.id}">Подробней</a></p>
+</div>`,
+      ]);
+    });
+
+    /*
+1. Запустите скрипт и убедитесь, что в консоли выводится div с классом container
+2. Поменяйте селектор в querySelector так, чтобы нашелся заголовок h1 
+3. Поменяйте селектор в querySelector так, чтобы нашелся второй заголовок h2
+4. Поменяйте селектор в querySelector так, чтобы нашелся первый параграф во второй секции
+5. Найдите элемент strong и поменяйте ему свойство innerHTML. Изучите результат
+6. Найдите вторую секцию и при помощи свойства innerHTML допишите текст "<img src='https://placekitten.com/200/100' alt=''>". В браузере должно появится изображение
+7. Возьмите массив из data из файла mod2-array-methos/map.js и выведите все элементы из массива как верстку. Пример приведен в том же файле.
+*/
+
+    //let element = document.querySelector("section:nth-child(2) p:last-of-type");
+    let element = document.querySelector("section:nth-child(3)");
+    element.innerHTML += "<img src='https://placekitten.com/200/100' alt=''>"
+
+    console.log(element);
+    //element.innerHTML = users;
+
+    const cat = document.querySelector("img");
+    cat.style.border = "10px solid green"
+    cat.style.boxShadow = "0 0 5px blue"
+    cat.style.borderRadius = "5px"
+    
+
+    // растворяющийся кот
+    
+    cat.onclick = function () {
+      let i = 0, step = 10, tick = 100;
+      function a() {
+        if (i < step) {
+          i++
+          cat.style.opacity = 1 - i / step;
+          setTimeout(a, tick)
+        }
+      }
+      a()
+    }
+
+
+  </script>
+</body>
+
+</html>

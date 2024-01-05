@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button {
+            margin-top: 30px
+        }
+    </style>
+</head>
+<body>
+    <img src="https://placekitten.com/150/150/" alt="">
+    <p>
+    <button class="button" onclick="go()">Поехали</button>
+<script>
+    function go() {
+    const img1 = document.querySelector('img')
+    const rect = img1.getBoundingClientRect()
+    img1.style.position = 'fixed'
+
+    let x1 = rect.left
+    let n = 0;
+    let rightBound = 400;
+
+    let t1 = setInterval(() => {
+        if (n < rightBound) {
+            n++;
+            img1.style.left = x1 + n + 'px'
+                   } else {
+                    clearInterval(t1)
+                   }
+    }, 40);
+}
+</script>
+
+</body>
+</html>

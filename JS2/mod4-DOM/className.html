@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .foo{background-color: bisque;}
+    </style>
+</head>
+<body>
+    <button onclick='change("p")'>Click</button>
+
+    <p class="foo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum, est!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint quia atque asperiores veniam repudiandae exercitationem! Inventore, quisquam. Impedit officia natus minus magnam itaque nisi qui nam veniam illum, reiciendis eius error dolorem cum ducimus officiis ullam rerum. Nobis porro incidunt, fugiat quae quibusdam dolorum reiciendis soluta ipsum vitae aspernatur voluptates.</p>
+    <p>Beatae repudiandae provident, dolor, illum quae a sapiente iusto ducimus delectus doloribus esse aliquam! Illum, dolorem aspernatur voluptatem doloribus reiciendis libero doloremque. Beatae dolorum fuga repellendus incidunt cumque doloribus iste praesentium sequi obcaecati. Quisquam, accusamus quod. Porro iure, dignissimos incidunt aliquid laboriosam maxime veniam, corrupti totam, similique nostrum natus quas?</p>
+    <p>Unde atque animi quas aliquam sint facilis enim delectus suscipit, tempore hic numquam, natus laudantium sapiente quam voluptate mollitia voluptas beatae doloribus, magnam explicabo dolores eos libero sunt. Aut eius assumenda id illum aperiam quas deserunt tempora, inventore eos facere fugiat nemo quaerat eligendi minima error repellat! Quo, accusamus quibusdam.</p>
+    <script>
+        const $ = selector => document.querySelectorAll(selector)
+        const change = (selector) =>{
+            const els = $(selector);
+            // els.forEach(
+            //     el => el.className = 'foo'
+            // )
+
+            // els.forEach(
+            //     el => el.classList.add('foo')
+            // )
+            els.forEach(
+                el => el.classList.toggle('foo')
+            )
+        }
+    </script>
+</body>
+</html>

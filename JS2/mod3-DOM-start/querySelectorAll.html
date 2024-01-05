@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style> 
+  .selected {
+    color: blue;
+    border: 2px dotted black;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hello, world!</h1>
+    <section>
+      <h2>First heading</h2>
+      <p><strong>Lorem</strong>, ipsum dolor.</p>
+      <p>Eum, dolorem vel.</p>
+    </section>
+    <section>
+      <h2>Second heading</h2>
+      <p>Lorem, ipsum dolor.</p>
+      <p>Eum, <strong>dolorem</strong> vel.</p>
+      <img src='https://placekitten.com/200/100' alt=''>
+    </section>
+  </div>
+  <script>
+/*
+1. Запустите скрипт и убедитесь, что в консоли выводится коллекция из одного div с классом container
+2. Укажите селектор, который найдёт все параграфы второй секции
+3. Укажите селектор, который найдёт все элементы strong
+4*. Зайдите на произвольный сайт и в консоли найдите все элементы-изображения, а затем выведите их атрибуты href в виде одной строки с разделителем в виде запятой
+*/
+
+    //let elements = document.querySelectorAll('section:nth-of-type(2) p');
+    let elements = document.querySelectorAll('strong');
+    for (let i = 0; i < elements.length; i++) {
+      elements[i].className = 'selected'
+    }
+
+    console.log(elements);
+
+    //найти все картинки 
+    let str = "";
+    let coll = document.querySelectorAll('a');
+    coll.forEach(a => {
+      str += a.href + ',';
+    })
+console.log(str.slice());
+  </script>
+</body>
+</html>
