@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js" integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+      #completed {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="wrapper"></div>
+      <h1>To-Do List</h1>
+      <input type="text" id="text" />
+      <button id="btnAdd">Добавить</button>
+
+      <hr />
+      <h3>Список задач</h3>
+      <div id="list"></div>
+      <ul>
+        <!-- <li>Lorem. <a href="#">Удалить</a></li> -->
+      </ul>
+      <hr />
+      <h3>Выполенные задачи</h3>
+      <div id="completed">
+        <ul>
+          <!-- <li>Lorem. <a href="#">Удалить</a></li> -->
+        </ul>
+      </div>
+    </div>
+
+    <script src="./index.js">     </script>
+  </body>
+</html>
